@@ -32,11 +32,16 @@ function GridContainer({ movies, selectMovie, selectedMovie, search }) {
               <h3>
                 {movie.season} {movie.title}
               </h3>
-              {movie.categories && (
-                <div className="grid-container-item-detail-tag">
-                  {movie.categories}
-                </div>
-              )}
+              <div className="grid-container-item-detail-categories">
+                {movie.categories.map((category) => (
+                  <div
+                    className="grid-container-item-detail-tag"
+                    key={category}
+                  >
+                    {category}
+                  </div>
+                ))}
+              </div>
             </div>
           </li>
         ))}

@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Spiderhead",
       "cover": "movie-cover-1.jpg",
-      "categories": ["Horror"],
+      "categories": ["Horror", "Comedy"],
       "bestQuality": "4K HDR",
       "isNew": true
     },

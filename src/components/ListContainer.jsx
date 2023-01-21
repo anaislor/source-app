@@ -6,8 +6,7 @@ function ListContainer({ movies, selectMovie, selectedMovie, search }) {
     <table className="list-container">
       <thead className="list-container-header">
         <tr>
-          <td>
-          </td>
+          <td></td>
           <td>Title:</td>
           <td>Category</td>
           <td>Best quality</td>
@@ -38,13 +37,22 @@ function ListContainer({ movies, selectMovie, selectedMovie, search }) {
                 </div>
               </td>
               <td>
-                {movie.category && (
-                  <div className="grid-container-item-detail-tag">
-                    {movie.category}
-                  </div>
-                )}
+                <div className="list-container-body-item-qualities">
+                  {movie.categories.map((category) => (
+                    <div
+                      className="grid-container-item-detail-tag"
+                      key={category}
+                    >
+                      {category}
+                    </div>
+                  ))}
+                </div>
               </td>
-              <td>{movie.quality}</td>
+              <td>
+                <div className="grid-container-item-detail-tag quality">
+                  {movie.bestQuality}
+                </div>
+              </td>
             </tr>
           ))}
       </tbody>

@@ -69,6 +69,11 @@
   font-size: 11px;
   color: $primary-color;
   width: fit-content;
+
+  &.quality {
+    background: $quality-color;
+    color: $black-color;
+  }
 }
 
 @media (max-width: $layout-breakpoint-large) {

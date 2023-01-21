@@ -74,10 +74,17 @@
       #1a1a26 100%
     );
 
-
     h2 {
       font-size: 16px;
       line-height: 20px;
+    }
+
+    .grid-container-item-detail-categories {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      gap: 4px;
     }
   }
 }
