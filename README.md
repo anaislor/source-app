@@ -1,3 +1,19 @@
+# Source app
+
+Technical test for Source
+
+# Questions
+
+How much time did you spend on this test and at which task did you stop? - I spend 3 hours and I stop when I was about to start task 5
+
+
+Can you explain the technical and architecture choices you’ve made? - I split my code by views, components. And it reflects also on my styles folder. I decied to uses sass. 
+
+If you had more time to spend on the test, what would you like to add to your
+solution? - I would like to make the task 5 and to be able to delete several movie. I will also add a lot of interaction and transition as it is too flat right now. I would probably add a router jsute to go back on a Home route. 
+
+What can we do to improve this technical test ? - Typescript. I used JS as I am more familiar with. I think I can also refacto to improve performance as the wishlistHead may be rendered to many times (maybe context for display or use some callbacks). And as I said add more animations and transitions
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
