@@ -5,6 +5,9 @@ import "./../styles/views/Wishlist.scss";
 import { useState } from "react";
 import ListContainer from "../components/ListContainer";
 import { useCallback } from "react";
+import { ReactComponent as Grid } from "./../assets/icons/icon-grid.svg";
+import { ReactComponent as List } from "./../assets/icons/icon-list.svg";
+import { ReactComponent as Search } from "./../assets/icons/Icon-search.svg";
 
 function Wishlist() {
   const [movies, setMovies] = useState([...data.movie]);
@@ -29,12 +32,14 @@ function Wishlist() {
       <div className="view-header">
         <div className="view-header-row">
           <h1 className="view-header-row-title">Wishlist</h1>
-          <input
-            type="text"
-            className="view-header-search-input input"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
+          <div className="view-header-search-input input">
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <Search />
+          </div>
           <button className="input">Filters</button>
           <button className="view-header-button primary-button">
             Add a movie
@@ -44,13 +49,13 @@ function Wishlist() {
               onClick={() => setDisplayMode("grid")}
               className={`${displayMode === "grid" ? "selected" : ""}`}
             >
-              Grid
+              <Grid />
             </button>
             <button
               onClick={() => setDisplayMode("list")}
               className={`${displayMode === "list" ? "selected" : ""}`}
             >
-              List
+              <List />
             </button>
           </div>
         </div>
