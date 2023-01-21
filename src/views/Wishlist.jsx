@@ -6,9 +6,10 @@ import { useState } from "react";
 import ListContainer from "../components/ListContainer";
 
 function Wishlist() {
-  const [shows, setShows] = useState(data.tvshows);
+  const [shows, setShows] = useState([...data.tvshows]);
   const [selectedShow, setselectedShow] = useState(null);
   const [displayMode, setDisplayMode] = useState("grid");
+  const [search, setSearch] = useState("");
 
   const selectShow = (showId) => {
     setselectedShow(selectedShow === showId ? null : showId);
@@ -24,7 +25,12 @@ function Wishlist() {
       <div className="view-header">
         <div className="view-header-row">
           <h1 className="view-header-row-title">Wishlist</h1>
-          <input type="text" className="view-header-search-input input" />
+          <input
+            type="text"
+            className="view-header-search-input input"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
           <button className="input">Filters</button>
           <button className="view-header-button primary-button">
             Add a movie
@@ -63,12 +69,14 @@ function Wishlist() {
           shows={shows}
           selectShow={selectShow}
           selectedShow={selectedShow}
+          search={search}
         />
       ) : (
         <ListContainer
           shows={shows}
           selectShow={selectShow}
           selectedShow={selectedShow}
+          search={search}
         />
       )}
     </div>
