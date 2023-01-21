@@ -35,9 +35,16 @@
   button {
     height: 40px;
     width: 44px;
-    background: mix($white-color, $background-color, 6%);
+    opacity: 0.4;
+    background: mix($white-color, $background-color, 0%);
     border-top: 1px solid rgba(194, 194, 214, 0.1);
     font-size: 12px;
+    transition: 0.3s;
     cursor: pointer;
+    
+    &.selected{
+      background: mix($white-color, $background-color, 6%);
+      opacity: 1;
+    }
   }
 }

@@ -37,8 +37,10 @@
     padding: 4px;
   }
 
-  .grid-container-item-checkbox{
-
+  .grid-container-item-checkbox {
+    position: absolute;
+    left: 12px;
+    top: 12px;
   }
 
   .grid-container-item-image-container {
@@ -72,18 +74,6 @@
       #1a1a26 100%
     );
 
-    .grid-container-item-detail-tag {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 6px;
-      height: 20px;
-      background-color: mix($primary-color, $background-color, 15%);
-      border-radius: 6px;
-      font-size: 11px;
-      color: $primary-color;
-      width: fit-content;
-    }
 
     h2 {
       font-size: 16px;

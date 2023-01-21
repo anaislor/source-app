@@ -1,0 +1,41 @@
+@import "./../Variables.scss";
+@import "./../Inputs.scss";
+
+.list-container {
+  width: 100%;
+  border: 1px solid rgba(194, 194, 214, 0.1);
+
+  td {
+    border-bottom: 1px solid rgba(194, 194, 214, 0.1);
+    height: 48px;
+    vertical-align: middle;
+    padding: 16px;
+
+    &:first-child{
+        width: 48px;
+    }
+  }
+}
+
+.list-container-header {
+  background-color: mix($white-color, $background-color, 6%);
+}
+
+.list-container-body {
+  .list-container-body-item-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .list-container-body-image-container {
+    width: 30px;
+    height: 40px;
+    overflow: hidden;
+
+    img {
+      object-fit: contain;
+      height: 100%;
+    }
+  }
+}
