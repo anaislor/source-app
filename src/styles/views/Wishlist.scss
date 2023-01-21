@@ -1,0 +1,58 @@
+@import "./../Variables.scss";
+@import "./../Inputs.scss";
+@import "./../Buttons.scss";
+
+.view {
+  width: 100vw;
+  height: 100vh;
+  background: $background-color;
+  padding: 24px 48px;
+}
+
+.view-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 34px;
+
+  .view-header-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+
+    .view-header-row-title {
+      font-weight: $font-bold;
+      font-size: 32px;
+    }
+
+    .view-header-search-input {
+      margin-left: auto;
+    }
+
+    .view-header-row-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      padding: 0 12px;
+      font-size: 16px;
+      $font-weight: $font-semibold;
+      border: 1px solid rgba(194, 194, 214, 0.1);
+      border-radius: 6px;
+      background: mix($white-color, $background-color, 20%);
+      cursor: pointer;
+    }
+  }
+}
+
+.view-subheader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+
+  .view-subheader-title {
+    font-weight: $font-semibold;
+    font-size: 18px;
+  }
+}

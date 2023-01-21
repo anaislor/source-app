@@ -1,0 +1,43 @@
+@import "./Variables.scss";
+
+.primary-button {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background: $primary-color;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.dangerous-action-button {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background: mix($dangerous-action-color, $background-color, 15%);
+  border-radius: 6px;
+  border: 1px solid $dangerous-action-color;
+  color: $dangerous-action-color;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.switch-button {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+
+  button {
+    height: 40px;
+    width: 44px;
+    background: mix($white-color, $background-color, 6%);
+    border-top: 1px solid rgba(194, 194, 214, 0.1);
+    font-size: 12px;
+    cursor: pointer;
+  }
+}

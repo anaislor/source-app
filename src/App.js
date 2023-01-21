@@ -1,9 +1,10 @@
-import './styles/App.scss';
+import "./styles/App.scss";
+import Wishlist from "./views/Wishlist";
 
 function App() {
   return (
     <div className="App">
-      App
+      <Wishlist />
     </div>
   );
 }
