@@ -6,6 +6,16 @@ import { useState } from "react";
 
 function Wishlist() {
   const [shows, setShows] = useState(data.tvshows);
+  const [selectedShow, setselectedShow] = useState(null);
+
+  const selectShow = (showId) => {
+    setselectedShow(selectedShow === showId ? null : showId);
+  };
+
+  const deleteShow = ()=>{
+    const filterShows = shows.filter(show => show.id !== selectedShow)
+    setShows(filterShows)
+  }
 
   return (
     <div className="view">
@@ -29,12 +39,16 @@ function Wishlist() {
 
       <div className="view-subheader">
         <h2 className="view-subheader-title">Titles ({shows.length})</h2>
-        <button className="view-subheader-delete-button dangerous-action-button">
+        <button className="view-subheader-delete-button dangerous-action-button" onClick={deleteShow}>
           Delete selection
         </button>
       </div>
 
-      <GridContainer shows={shows} />
+      <GridContainer
+        shows={shows}
+        selectShow={selectShow}
+        selectedShow={selectedShow}
+      />
     </div>
   );
 }
