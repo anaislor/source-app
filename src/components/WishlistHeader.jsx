@@ -3,7 +3,25 @@ import { ReactComponent as Grid } from "./../assets/icons/icon-grid.svg";
 import { ReactComponent as List } from "./../assets/icons/icon-list.svg";
 import { ReactComponent as Search } from "./../assets/icons/Icon-search.svg";
 
-function WishlistHeader({search, setSearch, displayMode, setDisplayMode, movies, deletemovie}) {
+function WishlistHeader({
+  search,
+  setSearch,
+  displayMode,
+  setDisplayMode,
+  movies,
+  deletemovie,
+}) {
+
+
+  let categories = movies.reduce(
+    (acc, curr) => acc.concat(curr.categories),
+    []
+  )
+  categories = categories.filter(
+    (cat, index) => categories.indexOf(cat) === index
+  );
+
+
   return (
     <React.Fragment>
       <div className="view-header">
@@ -38,6 +56,11 @@ function WishlistHeader({search, setSearch, displayMode, setDisplayMode, movies,
         </div>
         <div className="view-header-row">
           <div className="view-header-row-label">All</div>
+          {categories.map((category) => (
+            <div className="view-header-row-label" key={category}>
+              {category}
+            </div>
+          ))}
         </div>
       </div>
 
