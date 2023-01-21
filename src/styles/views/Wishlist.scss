@@ -4,7 +4,7 @@
 
 .view {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: $background-color;
   padding: 24px 48px;
 }

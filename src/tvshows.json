@@ -1,0 +1,44 @@
+{
+  "tvshows": [
+    {
+      "id": 1,
+      "name": "Stranger things",
+      "season": "S1",
+      "showPicture": "",
+      "category": "Horror",
+      "newShow": false
+    },
+    {
+      "id": 2,
+      "name": "Stranger things",
+      "season": "S1",
+      "showPicture": "",
+      "category": "Comedy",
+      "newShow": false
+    },
+    {
+      "id": 3,
+      "name": "Stranger things",
+      "season": "S2",
+      "showPicture": "",
+      "category": "Horror",
+      "newShow": false
+    },
+    {
+      "id": 4,
+      "name": "Stranger things",
+      "season": "S3",
+      "showPicture": "",
+      "category": "Horror",
+      "newShow": false
+    },
+    {
+      "id": 5,
+      "name": "Stranger things",
+      "season": "S4",
+      "showPicture": "",
+      "category": "Horror",
+      "newShow": true
+    }
+  ]
+}

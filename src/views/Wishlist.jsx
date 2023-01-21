@@ -1,7 +1,12 @@
 import React from "react";
+import GridContainer from "../components/GridContainer";
+import data from "./../tvshows.json";
 import "./../styles/views/Wishlist.scss";
+import { useState } from "react";
 
 function Wishlist() {
+  const [shows, setShows] = useState(data.tvshows);
+
   return (
     <div className="view">
       <div className="view-header">
@@ -23,9 +28,13 @@ function Wishlist() {
       </div>
 
       <div className="view-subheader">
-        <h2 className="view-subheader-title">Titles</h2>
-        <button className="view-subheader-delete-button dangerous-action-button">Delete selection</button>
+        <h2 className="view-subheader-title">Titles ({shows.length})</h2>
+        <button className="view-subheader-delete-button dangerous-action-button">
+          Delete selection
+        </button>
       </div>
+
+      <GridContainer shows={shows} />
     </div>
   );
 }
