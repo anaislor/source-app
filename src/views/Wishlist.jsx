@@ -4,7 +4,6 @@ import data from "./../data.json";
 import "./../styles/views/Wishlist.scss";
 import { useState } from "react";
 import ListContainer from "../components/ListContainer";
-import { useCallback } from "react";
 import WishlistHeader from "../components/WishlistHeader";
 
 function Wishlist() {
@@ -13,12 +12,9 @@ function Wishlist() {
   const [displayMode, setDisplayMode] = useState("grid");
   const [search, setSearch] = useState("");
 
-  const selectMovie = useCallback(
-    (movieId) => {
-      setselectedMovie(selectedMovie === movieId ? null : movieId);
-    },
-    [movies]
-  );
+  const selectMovie = (movieId) => {
+    setselectedMovie(selectedMovie === movieId ? null : movieId);
+  };
 
   const deletemovie = () => {
     const filtermovies = movies.filter((movie) => movie.id !== selectedMovie);
