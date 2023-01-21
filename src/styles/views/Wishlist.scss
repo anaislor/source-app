@@ -6,7 +6,7 @@
   width: 100vw;
   min-height: 100vh;
   background: $background-color;
-  padding: 24px 48px;
+  padding: 24px;
 }
 
 .view-header {
@@ -48,6 +48,7 @@
 
 .view-subheader {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 22px;
 
@@ -68,4 +69,20 @@
   font-size: 11px;
   color: $primary-color;
   width: fit-content;
+}
+
+@media (max-width: $layout-breakpoint-large) {
+  .view-header {
+    .view-header-row {
+      flex-wrap: wrap;
+
+      .view-header-row-title {
+        margin-right: 100%;
+      }
+
+      .view-header-search-input {
+        margin-left: unset;
+      }
+    }
+  }
 }
