@@ -4,21 +4,21 @@ Technical test for Source
 
 # Questions
 
-###How much time did you spend on this test and at which task did you stop? 
+### How much time did you spend on this test and at which task did you stop? 
 
 I spend 3 hours and I stop when I was about to start task 5
 
 
-###Can you explain the technical and architecture choices you’ve made? 
+### Can you explain the technical and architecture choices you’ve made? 
 
 I split my code by views and components. And it reflects also on my styles folder. I decied to uses sass. 
 
-###If you had more time to spend on the test, what would you like to add to your
+### If you had more time to spend on the test, what would you like to add to your
 solution? 
 
 I would like to make the task 5 and to be able to delete several movies. I will also add a lot of interactions and transitions as it is too flat right now. I would probably add a router just to go back on a Home route. 
 
-###What can we do to improve this technical test ? 
+### What can we do to improve this technical test ? 
 
 Typescript. I used JS as I am more familiar with. I think I can also refacto to improve performance as the wishlistHead may be rendered to many times (maybe context for display or use some callbacks). And as I said before add more animations and transitions
 
