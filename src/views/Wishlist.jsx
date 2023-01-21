@@ -1,23 +1,27 @@
 import React from "react";
 import GridContainer from "../components/GridContainer";
-import data from "./../tvshows.json";
+import data from "./../data.json";
 import "./../styles/views/Wishlist.scss";
 import { useState } from "react";
 import ListContainer from "../components/ListContainer";
+import { useCallback } from "react";
 
 function Wishlist() {
-  const [shows, setShows] = useState([...data.tvshows]);
-  const [selectedShow, setselectedShow] = useState(null);
+  const [movies, setMovies] = useState([...data.movie]);
+  const [selectedMovie, setselectedMovie] = useState(null);
   const [displayMode, setDisplayMode] = useState("grid");
   const [search, setSearch] = useState("");
 
-  const selectShow = (showId) => {
-    setselectedShow(selectedShow === showId ? null : showId);
-  };
+  const selectMovie = useCallback(
+    (movieId) => {
+      setselectedMovie(selectedMovie === movieId ? null : movieId);
+    },
+    [movies]
+  );
 
-  const deleteShow = () => {
-    const filterShows = shows.filter((show) => show.id !== selectedShow);
-    setShows(filterShows);
+  const deletemovie = () => {
+    const filtermovies = movies.filter((movie) => movie.id !== selectedMovie);
+    setMovies(filtermovies);
   };
 
   return (
@@ -56,26 +60,26 @@ function Wishlist() {
       </div>
 
       <div className="view-subheader">
-        <h2 className="view-subheader-title">Titles ({shows.length})</h2>
+        <h2 className="view-subheader-title">Titles ({movies.length})</h2>
         <button
           className="view-subheader-delete-button dangerous-action-button"
-          onClick={deleteShow}
+          onClick={deletemovie}
         >
           Delete selection
         </button>
       </div>
       {displayMode === "grid" ? (
         <GridContainer
-          shows={shows}
-          selectShow={selectShow}
-          selectedShow={selectedShow}
+          movies={movies}
+          selectMovie={selectMovie}
+          selectedMovie={selectedMovie}
           search={search}
         />
       ) : (
         <ListContainer
-          shows={shows}
-          selectShow={selectShow}
-          selectedShow={selectedShow}
+          movies={movies}
+          selectMovie={selectMovie}
+          selectedMovie={selectedMovie}
           search={search}
         />
       )}

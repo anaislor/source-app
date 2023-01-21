@@ -1,40 +1,40 @@
 import React from "react";
 import "./../styles/components/GridContainer.scss";
 
-function GridContainer({ shows, selectShow, selectedShow, search }) {
+function GridContainer({ movies, selectMovie, selectedMovie, search }) {
   return (
     <ul className="gird-container">
-      {shows
-        .filter((show) =>
-          show.name.toUpperCase().includes(search.toUpperCase())
+      {movies
+        .filter((movie) =>
+          movie.title.toUpperCase().includes(search.toUpperCase())
         )
-        .map((show) => (
+        .map((movie) => (
           <li
-            key={show.id}
+            key={movie.id}
             className={`grid-container-item ${
-              selectedShow === show.id ? "selected" : ""
+              selectedMovie === movie.id ? "selected" : ""
             }`}
-            onClick={() => selectShow(show.id)}
+            onClick={() => selectMovie(movie.id)}
           >
             <input
               type="checkbox"
-              checked={selectedShow === show.id}
+              checked={selectedMovie === movie.id}
               className="grid-container-item-checkbox checkbox-input"
-              onChange={() => selectShow(show.id)}
+              onChange={() => selectMovie(movie.id)}
             />
-            {show.newShow && (
+            {movie.isNew && (
               <div className="grid-container-item-new-tag">New</div>
             )}
             <div className="grid-container-item-image-container">
-              <img src="/assets/netflix-poster.jpeg" alt={show.name} />
+              <img src={`/assets/${movie.cover}`} alt={movie.title} />
             </div>
             <div className="grid-container-item-detail">
               <h3>
-                {show.season} {show.name}
+                {movie.season} {movie.title}
               </h3>
-              {show.category && (
+              {movie.categories && (
                 <div className="grid-container-item-detail-tag">
-                  {show.category}
+                  {movie.categories}
                 </div>
               )}
             </div>
